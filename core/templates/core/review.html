@@ -1,0 +1,25 @@
+{% extends 'core/home.html' %}
+{% block content %}
+<div class="col-sm-8 offset-2 ">
+    <h4 class='alert alert-info text-center mt-2'><b> Update Student Information</b></h4>
+    <form action="" method="POST" novalidate>
+    {% csrf_token %}
+        {{fr.as_p}}
+
+        <input type="submit" class='btn btn-success' value="Update">
+        <a href="{% url 'student' %}" class='float-end btn btn-warning btn-small '>back</a>
+    </form>
+    {% comment %} <a href="{% url 'student' %}" class='float-end btn btn-warning btn-small '>back</a>
+     {% endcomment %}
+
+     {% if messages %}
+     {% for message in messages  %}
+     {% if message.tags %}  <script>alert("{{ message }}")</script> {% endif %}
+     
+     {% endfor %}
+     {% endif %}
+
+</div>
+{% endblock content %}
+
+
