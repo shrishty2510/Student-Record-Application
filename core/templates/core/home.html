@@ -59,7 +59,7 @@
                         <td>{{student.password}}</td>
                         <td>{{student.date}}</td>
                         <td>
-                            <a href="{% url 'update' student.id %}" class="btn btn-warning btn-small mx-2">Edit</a>
+                            <a href="{% url 'update' student.id %}" class="btn btn-warning btn-small mx-2">Edit</a><br>
                             {% comment %} <a href="{% url 'delete' student.id %}" class="btn btn-danger btn-small ">Delete</a> {% endcomment %}
                             <form action="{% url 'delete' student.id  %}" method="POST" class="d-inline">
                                 {% csrf_token %}
